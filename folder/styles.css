@@ -6,6 +6,7 @@ html, body {
 body {
   background-color: #090E1D; /* solid color behind */
   background-image: url("../images/luxury.jpeg");
+  /* border: 310x; */
   background-repeat: no-repeat;
   background-position: 10vh center;
 
