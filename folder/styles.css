@@ -2,14 +2,35 @@ html, body {
   height: 100%;
   margin: 0;
 }
+.luxe-logo{
+    width: 25vh;
+    /* background-image: url("../images/luxefind.png"); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 110px;
+    margin-top: 100px;
+    z-index: 1; 
+}
+.luxury-bg{
+
+}
+
+
+/* .white-bg{
+    width: 85vh;
+    background: white;
+    background-repeat: no-repeat;
+    height: 85vh;
+    background-size: 25vh;
+    margin-left: 65vh;
+    margin-top: 7.5vh;
+    z-index: 1;
+} */
 
 body {
-  background-color: #090E1D; /* solid color behind */
-  background-image: url("../images/luxury.jpeg");
-  /* border: 310x; */
-  background-repeat: no-repeat;
-  background-position: 10vh center;
-
-  /* key trick */
-  background-size: auto 85vh; /* scale by height only */
 }
+
+.div-basic{
+  /* display: flex; */
+}
+
