@@ -1,15 +1,28 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 body {
-  background-color: #090E1D; /* solid color behind */
-  background-image: url("../images/luxury.jpeg");
-  /* border: 310x; */
-  background-repeat: no-repeat;
-  background-position: 10vh center;
-
-  /* key trick */
-  background-size: auto 85vh; /* scale by height only */
+  margin: 0;
+  background: #090E1D;
 }
+
+.border-container {
+  width: 80%;
+  height: 80vh;
+  border: 3px solid white;
+  margin: 0 auto;
+  margin-top: 10vh;
+  box-sizing: border-box;
+  background-color: white;
+  /* color: white; */
+  padding-bottom: 5px;
+}
+.image-bg{
+  height: 100%;
+  border: 3px solid black;
+}
+.luxe-logo{
+  position: absolute;
+  object-fit: contain;
+  left: 10%;
+  height: 25vh;
+}
+
+/*I GET THE IDEA BRO DI BODY HTML 2 DIV IM GONNA EAT FIRST BRO*/
