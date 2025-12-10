@@ -2,10 +2,15 @@
 Project PRPL, LTIK, dan Daspro
 
 Azka the Artist
+
 Jofi the Programmer
+
 Indra the Developer
+
 Rizky King SKPL
+
 Alif the Group Helper
+
 #090E1D
 
 ![Badge Version](https://img.shields.io/badge/version-1.0.0-green)
