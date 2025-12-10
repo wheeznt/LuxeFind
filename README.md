@@ -1,91 +1,39 @@
 # LuxeFind
-Project PRPL Daspro
+Project PRPL, LTIK, dan Daspro
 
-rainbow dash here is the programmer
-
-wheeznt sang artist
-
-indra mekbuk perancang idk
-
+Azka the Artist
+Jofi the Programmer
+Indra the Developer
+Rizky King SKPL
+Alif the Group Helper
 #090E1D
 
-# LuxeFind
-
-![Badge License](https://img.shields.io/badge/license-MIT-blue)
 ![Badge Version](https://img.shields.io/badge/version-1.0.0-green)
 ![Badge Status](https://img.shields.io/badge/status-active-success)
 
-> Tuliskan satu kalimat singkat yang menarik tentang apa kegunaan project ini. Contoh: "Aplikasi manajemen tugas berbasis AI untuk meningkatkan produktivitas tim."
-
+> Aplikasi untuk mempermudah kebutuhan kita dalam mencari barang
 ## 📸 Screenshots
-![Tampilan Dashboard](./path/to/screenshot.png)
+![Tampilan Login]<img width="1440" height="1024" alt="Login 4" src="https://github.com/user-attachments/assets/f1f27dcd-2727-4076-877d-4208f369bc99" /> <img width="1440" height="1024" alt="Sign In" src="https://github.com/user-attachments/assets/80b213a4-c27d-4704-b19a-484e12e91aaa" />
 
-## 📋 Daftar Isi
-- [Tentang Project](#-tentang-project)
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi yang Digunakan](#-teknologi-yang-digunakan)
-- [Cara Install & Menjalankan](#-cara-install--menjalankan)
-- [Cara Menggunakan](#-cara-menggunakan)
-- [Kontribusi](#-kontribusi)
-- [Lisensi](#-lisensi)
 
 ## 🧐 Tentang Project
-Jelaskan lebih detail tentang project ini. Masalah apa yang diselesaikan? Siapa target penggunanya? Mengapa kamu membuatnya?
+Project ini adalah tentang membuat website untuk memenuhi tugas mata kuliah Daspro dan PRPL serta LTIK. Website ini cara kerja nya mirip dengan e commerce pada biasanya, tetapi dengan twist yaitu di LuxeFind kalian mem posting untuk mencari barangnya, bukan menjualnya
 
 ## ✨ Fitur Utama
-* **Fitur 1:** Penjelasan singkat.
-* **Fitur 2:** Penjelasan singkat.
-* **Fitur 3:** Penjelasan singkat.
+* **Fitur 1:** Login/Register.
+* **Fitur 2:** Posting Barang.
+* **Fitur 3:** Detail Postingan Barang.
 
 ## 💻 Teknologi yang Digunakan
-* [React](https://reactjs.org/) - Frontend framework
-* [Node.js](https://nodejs.org/) - Backend runtime
-* [PostgreSQL](https://www.postgresql.org/) - Database
-* [Tailwind CSS](https://tailwindcss.com/) - Styling
+* [Python](https://www.python.org/) - Bahasa pemrograman utama (Logic/Backend)
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - Struktur halaman web (Frontend)
+* [MySQL](https://www.mysql.com/) - Database Management System
 
-## 🚀 Cara Install & Menjalankan
-
-### Prasyarat
-Pastikan kamu sudah menginstall:
-* Node.js (v14+)
-* NPM / Yarn
-
-### Langkah Instalasi
-
-1.  Clone repository ini
-    ```bash
-    git clone [https://github.com/username-kamu/nama-repo.git](https://github.com/username-kamu/nama-repo.git)
-    ```
-2.  Masuk ke direktori project
-    ```bash
-    cd nama-repo
-    ```
-3.  Install dependencies
-    ```bash
-    npm install
-    ```
-4.  Buat file `.env` (berdasarkan `.env.example`) dan sesuaikan variabel environment.
-5.  Jalankan aplikasi
-    ```bash
-    npm start
-    ```
-
-## 🔧 Cara Menggunakan
-Berikan contoh cara penggunaan project ini. Bisa berupa potongan kode (snippet) atau langkah-langkah navigasi di aplikasinya.
-
-## 🤝 Kontribusi
-Kontribusi sangat terbuka! Silakan fork repository ini dan buat Pull Request.
-
-1.  Fork Project
-2.  Buat Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit Perubahan (`git commit -m 'Add some AmazingFeature'`)
-4.  Push ke Branch (`git push origin feature/AmazingFeature`)
-5.  Buka Pull Request
-
-## 📝 Lisensi
-Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanjut.
 
 ## 📞 Kontak
-Nama Kamu - [@twitter_handle](https://twitter.com/twitter_handle) - email@example.com
+Azka Athallah - [LinkedIn](https://www.linkedin.com/in/wheeznt/) - azcampoos.gmail.com
+
+Project Link: [https://github.com/wheeznt/LuxeFind](https://github.com/wheeznt/LuxeFind)
+
 
 Project Link: [https://github.com/username/repo](https://github.com/username/repo)
