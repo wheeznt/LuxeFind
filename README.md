@@ -13,7 +13,7 @@ Alif the Group Helper
 
 > Aplikasi untuk mempermudah kebutuhan kita dalam mencari barang
 ## 📸 Screenshots
-![Tampilan Login]<img width="1440" height="1024" alt="Login 4" src="https://github.com/user-attachments/assets/f1f27dcd-2727-4076-877d-4208f369bc99" /> <img width="1440" height="1024" alt="Sign In" src="https://github.com/user-attachments/assets/80b213a4-c27d-4704-b19a-484e12e91aaa" />
+![Tampilan Masuk]<img width="1440" height="1024" alt="Login 4" src="https://github.com/user-attachments/assets/f1f27dcd-2727-4076-877d-4208f369bc99" /> <img width="1440" height="1024" alt="Sign In" src="https://github.com/user-attachments/assets/80b213a4-c27d-4704-b19a-484e12e91aaa" />
 
 
 ## 🧐 Tentang Project
