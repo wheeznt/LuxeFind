@@ -30,9 +30,14 @@ Project ini adalah tentang membuat website untuk memenuhi tugas mata kuliah Dasp
 * **Fitur 3:** Detail Postingan Barang.
 
 ## 💻 Teknologi yang Digunakan
-* [Python](https://www.python.org/) - Bahasa pemrograman utama (Logic/Backend)
-* [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - Struktur halaman web (Frontend)
-* [MySQL](https://www.mysql.com/) - Database Management System
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+
+* **Python:** Untuk logika program.
+* **HTML & CSS:** Untuk struktur dan desain tampilan (Front end).
+* **MySQL:** Untuk penyimpanan database.
 
 
 ## 📞 Kontak
