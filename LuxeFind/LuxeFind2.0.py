@@ -101,12 +101,20 @@ def lihat_detail():
         return
 
     p = posts[idx]
-    print("\n=== DETAIL PERMINTAAN ===")
-    print("Nama barang:", p["nama"])
-    print("Merek:", p["merek"])
-    print("Tahun:", p["tahun"])
-    print("Deskripsi:", p["deskripsi"])
-    print("Kontak user:", p["kontak"])
+    while True:
+        print("\n=== DETAIL PERMINTAAN ===")
+        print("Nama barang:", p["nama"])
+        print("Merek:", p["merek"])
+        print("Tahun:", p["tahun"])
+        print("Deskripsi:", p["deskripsi"])
+        print("Kontak user:", p["kontak"])
+
+        print("\nMenu")
+        print("1 Kembali ke beranda")
+
+        pilih = input("Pilih menu: ")
+        if pilih == "1":
+            return
 
 # LOGOUT
 
