@@ -17,7 +17,7 @@ def register():
     print("Registrasi berhasil")
 
 def login():
-    global current_user
+    global current_userg
     email = input("Masukkan email: ")
     password = input("Masukkan password: ")
 
