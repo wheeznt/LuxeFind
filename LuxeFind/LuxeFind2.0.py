@@ -1,8 +1,5 @@
 users = {}
-requests = []
-proposals = []
-chats = []
-
+posts = []
 current_user = None
 
 # AUTH
@@ -10,145 +7,118 @@ current_user = None
 def register():
     email = input("Email: ")
     password = input("Password: ")
+    role = input("Daftar sebagai user atau mediator: ")
+
     if email in users:
         print("Email sudah terdaftar")
         return
-    users[email] = password
+
+    users[email] = {
+        "password": password,
+        "role": role
+    }
     print("Registrasi berhasil")
 
+
 def login():
-    global current_userg
-    email = input("Masukkan email: ")
-    password = input("Masukkan password: ")
+    global current_user
+    email = input("Email: ")
+    password = input("Password: ")
 
-    if email in users and users[email] == password:
+    if email in users and users[email]["password"] == password:
         current_user = email
-        print("Login berhasil! Selamat datang,", email)
-        return True
+        print("Login berhasil")
+        beranda()
     else:
-        print("Email atau password salah!")
-        return False
+        print("Login gagal")
 
-# REQUEST BARANG
+# USER MEMPOSTING BARANG YANG DICARI
 
-def buat_permintaan():
-    nama = input("Nama barang: ")
-    detail = input("Detail barang: ")
-    request = {
+def buat_post():
+    nama = input("Nama barang yang dicari: ")
+    merek = input("Merek: ")
+    tahun = input("Tahun: ")
+    deskripsi = input("Deskripsi tambahan: ")
+    kontak = input("Kontak yang bisa dihubungi: ")
+
+    post = {
         "user": current_user,
         "nama": nama,
-        "detail": detail,
-        "status": "Menunggu mediator"
+        "merek": merek,
+        "tahun": tahun,
+        "deskripsi": deskripsi,
+        "kontak": kontak
     }
-    requests.append(request)
-    print("Permintaan dibuat")
 
-def lihat_permintaan():
-    for i, r in enumerate(requests):
-        print(i, r["nama"], r["status"])
+    posts.append(post)
+    print("Postingan berhasil ditambahkan")
 
-# MEDIATOR
+# BERANDA SEPERTI E COMMERCE
 
-def kirim_proposal():
-    lihat_permintaan()
-    idx = int(input("Pilih ID permintaan: "))
-    harga = int(input("Harga penawaran: "))
-    proposal = {
-        "request_id": idx,
-        "mediator": current_user,
-        "harga": harga,
-        "status": "Menunggu persetujuan"
-    }
-    proposals.append(proposal)
-    requests[idx]["status"] = "Ada penawaran"
-    print("Proposal dikirim")
-
-# PEMBAYARAN
-
-def bayar():
-    for i, p in enumerate(proposals):
-        print(i, p)
-    idx = int(input("Pilih ID proposal: "))
-    proposals[idx]["status"] = "Dibayar"
-    requests[proposals[idx]["request_id"]]["status"] = "Diproses"
-    print("Pembayaran berhasil")
-
-# PENGIRIMAN
-
-def update_pengiriman():
-    for i, r in enumerate(requests):
-        print(i, r["nama"], r["status"])
-    idx = int(input("ID permintaan: "))
-    requests[idx]["status"] = "Dikirim"
-    print("Status diperbarui")
-
-# CHAT
-
-def kirim_chat():
-    pesan = input("Pesan: ")
-    chats.append({"user": current_user, "pesan": pesan})
-    print("Pesan terkirim")
-
-def lihat_chat():
-    for c in chats:
-        print(c["user"], ":", c["pesan"])
-
-# MENU
-
-def menu_user():
-    print("1 Buat permintaan barang")
-    print("2 Lihat permintaan")
-    print("3 Bayar")
-    print("4 Chat")
-    print("5 Logout")
-
-
-def menu_mediator():
-    print("1 Lihat permintaan")
-    print("2 Kirim proposal")
-    print("3 Update pengiriman")
-    print("4 Chat")
-    print("5 Logout")
-
-def menu_setelah_login():
+def beranda():
     while True:
-        print("\n=== HALAMAN UTAMA ===")
-        print("1 Menu User")
-        print("2 Menu Mediator")
-        print("3 Logout")
+        print("\n=== BERANDA ===")
+
+        if not posts:
+            print("Belum ada permintaan barang")
+        else:
+            for i, p in enumerate(posts):
+                print(f"{i}. {p['nama']} | {p['merek']} | {p['tahun']}")
+
+        print("\nMenu")
+        print("1 Lihat detail permintaan")
+
+        if users[current_user]["role"] == "user":
+            print("2 Buat permintaan barang")
+            print("3 Logout")
+        else:
+            print("2 Logout")
 
         pilih = input("Pilih menu: ")
 
         if pilih == "1":
-            menu_user()
-            m = input("Pilih: ")
-            if m == "1": buat_permintaan()
-            elif m == "2": lihat_permintaan()
-            elif m == "3": bayar()
-            elif m == "4": kirim_chat(); lihat_chat()
-            elif m == "5": return
-        elif pilih == "2":
-            menu_mediator()
-            m = input("Pilih: ")
-            if m == "1": lihat_permintaan()
-            elif m == "2": kirim_proposal()
-            elif m == "3": update_pengiriman()
-            elif m == "4": kirim_chat(); lihat_chat()
-            elif m == "5": return
+            lihat_detail()
+        elif pilih == "2" and users[current_user]["role"] == "user":
+            buat_post()
+        elif pilih == "2" and users[current_user]["role"] == "mediator":
+            logout()
+            return
         elif pilih == "3":
             logout()
             return
         else:
             print("Pilihan tidak valid")
 
+# DETAIL POSTINGAN
+
+def lihat_detail():
+    if not posts:
+        return
+
+    idx = int(input("Masukkan ID permintaan: "))
+    if idx >= len(posts):
+        print("ID tidak valid")
+        return
+
+    p = posts[idx]
+    print("\n=== DETAIL PERMINTAAN ===")
+    print("Nama barang:", p["nama"])
+    print("Merek:", p["merek"])
+    print("Tahun:", p["tahun"])
+    print("Deskripsi:", p["deskripsi"])
+    print("Kontak user:", p["kontak"])
+
+# LOGOUT
 
 def logout():
     global current_user
     current_user = None
     print("Logout berhasil")
 
+# MENU AWAL
+
 while True:
-    print("\n=== MENU UTAMA ===")
+    print("\n=== MENU AWAL ===")
     print("1 Register")
     print("2 Login")
     print("3 Keluar")
@@ -158,10 +128,9 @@ while True:
     if pilih == "1":
         register()
     elif pilih == "2":
-        if login():
-            menu_setelah_login()
+        login()
     elif pilih == "3":
-        print("Terima kasih")
+        print("Keluar aplikasi")
         break
     else:
         print("Pilihan tidak valid")
