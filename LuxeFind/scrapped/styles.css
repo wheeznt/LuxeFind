@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  background: #363E7A;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.border-container {
+  width: 80%;
+  height: 80vh;
+  border: 5px solid #12162C;
+  margin: 0 auto;
+  margin-top: 10vh;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #090E1D;
+  color: white;
+  overflow: hidden;
+  /* padding-bottom: 5px; */
+}
+.image-bg{
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  /* border: 3px solid #5684E5; */
+}
+.luxe-logo{
+  position: absolute;
+  object-fit: contain;
+  left: -1%;
+  height: 25vh;
+}
+
+.sign-in{
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+
+.email{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: #9995BF;
+}
+
+.textbox1{
+  background-image: url("../images/mail-logo.png");
+  position: absolute;
+  left: 50%;
+  top: 30%;
+
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #6C7ADF; /* elegant underline */
+
+  outline: none;
+  transition: 0.3s ease;
+
+}
+
+.textbox1::placeholder{
+  color: rgba(255, 255, 255, 0.4);
+}
+.textbox1:focus{
+  border-bottom-color: gold;
+  letter-spacing: 1px;
+}
+
+/*I GET THE IDEA BRO DI BODY HTML 2 DIV IM GONNA EAT FIRST BRO*/
