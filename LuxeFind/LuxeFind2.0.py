@@ -57,8 +57,7 @@ def buat_post():
 
 def beranda():
     while True:
-        print("
-=== BERANDA ===")
+        print("=== BERANDA ===")
 
         if not posts:
             print("Belum ada permintaan barang")
@@ -66,8 +65,7 @@ def beranda():
             for i, p in enumerate(posts):
                 print(f"{i}. {p['nama']} | {p['merek']} | {p['tahun']}")
 
-        print("
-Menu")
+        print("Menu")
         print("1 Lihat detail permintaan")
 
         if users[current_user]["role"] == "user":
@@ -104,16 +102,14 @@ def lihat_detail():
 
     p = posts[idx]
     while True:
-        print("
-=== DETAIL PERMINTAAN ===")
+        print("=== DETAIL PERMINTAAN ===")
         print("Nama barang:", p["nama"])
         print("Merek:", p["merek"])
         print("Tahun:", p["tahun"])
         print("Deskripsi:", p["deskripsi"])
         print("Kontak user:", p["kontak"])
 
-        print("
-Menu")
+        print("Menu")
         print("1 Kembali ke beranda")
 
         pilih = input("Pilih menu: ")
