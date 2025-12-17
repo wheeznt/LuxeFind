@@ -32,7 +32,7 @@ def login():
     else:
         print("Login gagal")
 
-# USER MEMPOSTING BARANG YANG DICARI
+# USER MEMPOSTING BARANG 
 
 def buat_post():
     nama = input("Nama barang yang dicari: ")
@@ -53,7 +53,7 @@ def buat_post():
     posts.append(post)
     print("Postingan berhasil ditambahkan")
 
-# BERANDA SEPERTI E COMMERCE
+# BERANDA 
 
 def beranda():
     while True:
