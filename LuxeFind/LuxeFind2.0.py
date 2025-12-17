@@ -2,7 +2,53 @@ users = {}
 posts = []
 current_user = None
 
-# AUTH
+USERS_FILE = "users.txt"
+POSTS_FILE = "posts.txt"
+
+# ================= LOAD & SAVE =================
+
+def load_users():
+    try:
+        with open(USERS_FILE, "r") as file:
+            for line in file:
+                email, password, role = line.strip().split("|")
+                users[email] = {
+                    "password": password,
+                    "role": role
+                }
+    except FileNotFoundError:
+        pass
+
+
+def save_user(email, password, role):
+    with open(USERS_FILE, "a") as file:
+        file.write(f"{email}|{password}|{role}\n")
+
+
+def load_posts():
+    try:
+        with open(POSTS_FILE, "r") as file:
+            for line in file:
+                user, nama, merek, tahun, deskripsi, kontak = line.strip().split("|")
+                posts.append({
+                    "user": user,
+                    "nama": nama,
+                    "merek": merek,
+                    "tahun": tahun,
+                    "deskripsi": deskripsi,
+                    "kontak": kontak
+                })
+    except FileNotFoundError:
+        pass
+
+
+def save_post(post):
+    with open(POSTS_FILE, "a") as file:
+        file.write(
+            f"{post['user']}|{post['nama']}|{post['merek']}|{post['tahun']}|{post['deskripsi']}|{post['kontak']}\n"
+        )
+
+# ================= AUTH =================
 
 def register():
     email = input("Email: ")
@@ -17,6 +63,8 @@ def register():
         "password": password,
         "role": role
     }
+
+    save_user(email, password, role)
     print("Registrasi berhasil")
 
 
@@ -32,7 +80,7 @@ def login():
     else:
         print("Login gagal")
 
-# USER MEMPOSTING BARANG 
+# ================= POSTING =================
 
 def buat_post():
     nama = input("Nama barang yang dicari: ")
@@ -51,13 +99,14 @@ def buat_post():
     }
 
     posts.append(post)
+    save_post(post)
     print("Postingan berhasil ditambahkan")
 
-# BERANDA 
+# ================= BERANDA =================
 
 def beranda():
     while True:
-        print("=== BERANDA ===")
+        print("\n=== BERANDA ===")
 
         if not posts:
             print("Belum ada permintaan barang")
@@ -89,7 +138,7 @@ def beranda():
         else:
             print("Pilihan tidak valid")
 
-# DETAIL POSTINGAN
+# ================= DETAIL =================
 
 def lihat_detail():
     if not posts:
@@ -102,7 +151,7 @@ def lihat_detail():
 
     p = posts[idx]
     while True:
-        print("=== DETAIL PERMINTAAN ===")
+        print("\n=== DETAIL PERMINTAAN ===")
         print("Nama barang:", p["nama"])
         print("Merek:", p["merek"])
         print("Tahun:", p["tahun"])
@@ -116,14 +165,17 @@ def lihat_detail():
         if pilih == "1":
             return
 
-# LOGOUT
+# ================= LOGOUT =================
 
 def logout():
     global current_user
     current_user = None
     print("Logout berhasil")
 
-# MENU AWAL
+# ================= PROGRAM START =================
+
+load_users()
+load_posts()
 
 while True:
     print("\n=== MENU AWAL ===")
