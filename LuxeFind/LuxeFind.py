@@ -56,6 +56,7 @@ def buat_post():
 # BERANDA SEPERTI E COMMERCE
 
 def beranda():
+    global current_user
     while True:
         print("\n=== BERANDA ===")
 
@@ -70,9 +71,8 @@ def beranda():
 
         if users[current_user]["role"] == "user":
             print("2 Buat permintaan barang")
-            print("3 Logout")
-        else:
-            print("2 Logout")
+
+        print("0 Kembali ke Menu Awal")
 
         pilih = input("Pilih menu: ")
 
@@ -80,11 +80,51 @@ def beranda():
             lihat_detail()
         elif pilih == "2" and users[current_user]["role"] == "user":
             buat_post()
-        elif pilih == "2" and users[current_user]["role"] == "mediator":
-            logout()
             return
-        elif pilih == "3":
-            logout()
+        elif pilih == "0":
+            current_user = None
             return
         else:
             print("Pilihan tidak valid")
+
+# DETAIL POSTINGAN
+
+def lihat_detail():
+    if not posts:
+        return
+
+    idx = int(input("Masukkan ID permintaan: "))
+    if idx >= len(posts):
+        print("ID tidak valid")
+        return
+
+    p = posts[idx]
+    while True:
+        print("\n=== DETAIL PERMINTAAN ===")
+        print("Nama barang:", p["nama"])
+        print("Merek:", p["merek"])
+        print("Tahun:", p["tahun"])
+        print("Deskripsi:", p["deskripsi"])
+        print("Kontak user:", p["kontak"])
+
+
+
+# MENU AWAL
+
+while True:
+    print("\n=== MENU AWAL ===")
+    print("1 Register")
+    print("2 Login")
+    print("3 Keluar")
+
+    pilih = input("Pilih menu: ")
+
+    if pilih == "1":
+        register()
+    elif pilih == "2":
+        login()
+    elif pilih == "3":
+        print("Keluar aplikasi")
+        break
+    else:
+        print("Pilihan tidak valid")
